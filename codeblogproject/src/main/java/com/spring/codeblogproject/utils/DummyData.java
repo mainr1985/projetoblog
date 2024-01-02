@@ -19,7 +19,7 @@ public class DummyData {
     @Autowired
     CodeBlogRepository codeBlogRepository;
 
-   // @PostConstruct //tudo que vem sob essa anotação é executado conforme a aplicação vai subindo (sendo executada); Descomentar quando for testar posts no blog
+    //@PostConstruct //tudo que vem sob essa anotação é executado conforme a aplicação vai subindo (sendo executada); Descomentar quando for testar posts no blog
     public void savePosts(){
         
         List<Post> postList = new ArrayList();

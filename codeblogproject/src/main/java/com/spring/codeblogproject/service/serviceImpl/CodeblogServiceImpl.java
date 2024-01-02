@@ -10,6 +10,13 @@ import com.spring.codeblogproject.model.Post;
 import com.spring.codeblogproject.repository.CodeBlogRepository;
 import com.spring.codeblogproject.service.CodeblogService;
 
+/*
+ * @Service -> classes que fazem intermédio com outras classes (recebem informações pra repassar, etc). 
+ *      contém lógica de negócios; essa classe será injetada nas classes que precisem dela
+ * @Component -> serve pra dizer pro spring que é um bean (é pro spring gerenciar a classe). É uma anotação geral
+ * @Repository -> coleção de info que podem ser buscadas, consultadas, etc.
+*/
+
 @Service //mostra pro Spring que essa classe é um Bean gerenciado por ele 
 public class CodeblogServiceImpl implements CodeblogService{
     
