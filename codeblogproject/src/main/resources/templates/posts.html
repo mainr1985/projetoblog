@@ -4,8 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Blog Posts</title>
+    <!--código pego do site do bootstrap pra poder usar o css dele-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Olá mundo com Springboot MVC</h1>
+    <header>
+
+        <!--navbar criada com bootstrap-->
+        <nav class="navbar navbar-light bg-light">
+            <span class="navbar-brand mb-0 h1">MyCodeBlog</span>
+        </nav>
+    </header>
+    <section>
+        <div class = "container" style="width: 60%; padding-bottom: 30px;"></div>
+
+        <!--breadcrumb - serve como link pra voltar pra página anterior - bootstrap-->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" style="background-color: white; padding-left: 10px;">
+              <li class="breadcrumb-item active" aria-current="page">Posts</li>
+            </ol>
+          </nav>
+
+        <!--criando cards onde serão feitos os posts - bootstrap -->
+        <div class="card shadow-sm bg-white rounded" style="margin-top: 20px;">
+            <div class="card-body">
+              Teste post blog.
+            </div>
+          </div>
+    </section>
 </body>
 </html>
