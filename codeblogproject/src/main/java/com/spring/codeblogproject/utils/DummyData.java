@@ -19,7 +19,7 @@ public class DummyData {
     @Autowired
     CodeBlogRepository codeBlogRepository;
 
-    //@PostConstruct //tudo que vem sob essa anotação é executado conforme a aplicação vai subindo (sendo executada); Descomentar quando for testar posts no blog
+   // @PostConstruct //tudo que vem sob essa anotação é executado conforme a aplicação vai subindo (sendo executada); Descomentar quando for testar posts no blog
     public void savePosts(){
         
         List<Post> postList = new ArrayList();
@@ -35,7 +35,7 @@ public class DummyData {
         post2.setAutor("Michelli Brito");
         post2.setData(LocalDate.now());
         post2.setTitulo("API REST");
-        post2.setTexto("lorem 0 ipsum aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaavvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv");
+        post2.setTexto("lorem 0 ipsum aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaavvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasvv");
 
         postList.add(post1);
         postList.add(post2);

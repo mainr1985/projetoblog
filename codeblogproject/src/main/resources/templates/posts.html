@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br" xmlns:th="http://thymeleaf.org"> <!--quer dizer que quando for usado o parâmetro "th", o html vai saber que é referência ao thymeleaf-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,9 +26,25 @@
           </nav>
 
         <!--criando cards onde serão feitos os posts - bootstrap -->
-        <div class="card shadow-sm bg-white rounded" style="margin-top: 20px;">
+        <!--th:each faz como se fosse um for, repetindo pra todos os posts que estiverem no bd-->
+        <div class="card shadow-sm bg-white rounded" style="margin-top: 20px;" th:each="post :${posts}"> <!--esse posts vem da lista "posts" criada no Controller-->
             <div class="card-body">
-              Teste post blog.
+              <p class = "card-subtitle mb-2 text-muted" style = "font-size: 0.8 rem;"> 
+                <span th:text="${post.autor}"></span> <!--esse 'post' se refere ao criado acima no for each-->
+                <span th:text="${post.data}"></span>
+              </p>
+              
+              <a href="#">
+                <h4 class = "card-title" style = "font-weight: bold; color: black; padding-top: 5px;">
+                  <span th:text="${post.titulo}"></span> <!--esse 'post' se refere ao criado acima no for each-->
+                </h4>
+              </a>
+
+              <!--
+                - utext porque:
+                - #strings.abbreviate(post.texto,400) -> pra mostrar só os primeiros 400 caracteres do texto (substring)
+              -->
+              <p class = "card-text"><span th:utext=" ${#strings.abbreviate (post.texto,400) } "></span></p>
             </div>
           </div>
     </section>
