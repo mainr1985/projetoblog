@@ -1,11 +1,8 @@
 package com.spring.codeblogproject.service.serviceImpl;
 
 import java.util.List;
-import java.util.UUID;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.spring.codeblogproject.model.Post;
 import com.spring.codeblogproject.repository.CodeBlogRepository;
 import com.spring.codeblogproject.service.CodeblogService;
@@ -31,7 +28,7 @@ public class CodeblogServiceImpl implements CodeblogService{
     }
     
     @Override
-    public Post FindById(UUID id) {
+    public Post FindById(Long id) {
 
         return codeBlogRepository.findById(id).get(); //precisa do get() porque senão retorna o tipo errado
     }

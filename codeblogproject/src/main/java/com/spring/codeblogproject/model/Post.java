@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
@@ -18,9 +19,8 @@ import lombok.Data;
 @Table(name="TB_POST")
 public class Post {
     @Id
-    @GeneratedValue(generator = "UUID")
-    private UUID id;
-
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     
     private String titulo;
     private String autor;
@@ -30,6 +30,4 @@ public class Post {
     
     @Lob //porque o texto pode ser muito grande, assim o bd vai aceitar e melhorar a performance
     private String texto;
-
-
 }
