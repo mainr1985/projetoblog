@@ -34,17 +34,24 @@
                 <span th:text="${post.data}"></span>
               </p>
               
-              <a href="#">
+              <a th:href="${(#mvc.url('CC#getPostDetails').arg(0, post.id)).build()}"> 
                 <h4 class = "card-title" style = "font-weight: bold; color: black; padding-top: 5px;">
                   <span th:text="${post.titulo}"></span> <!--esse 'post' se refere ao criado acima no for each-->
                 </h4>
               </a>
 
+              <!--Explicando th:href
+                * CC -> sigla do nome do Controller que tem o método que vai receber a requisição ("getPostDetails")
+                #getPostDetails -> método do Controller a ser acessado
+                arg(0,post.id) -> 0 é default, post.id é o id do post, obtido no 'for each' na div
+                build -> constrói a URL
+              -->
+
               <!--
                 - utext porque:
                 - #strings.abbreviate(post.texto,400) -> pra mostrar só os primeiros 400 caracteres do texto (substring)
               -->
-              <p class = "card-text"><span th:utext=" ${#strings.abbreviate (post.texto,400) } "></span></p>
+              <p class = "card-text "><span th:utext=" ${#strings.abbreviate (post.texto,200) } "></span></p>
             </div>
           </div>
     </section>

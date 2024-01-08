@@ -2,7 +2,6 @@ package com.spring.codeblogproject.model;
 //Entidade Post que irá guardar os artigos e publicações do blog
 
 import java.time.LocalDate;
-import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
