@@ -21,12 +21,16 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
+    @NotBlank
     private String titulo;
+    
+    @NotBlank
     private String autor;
     
     @JsonFormat(shape=JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy") //setando o formato pra data ser salva
     private LocalDate data;
     
+    @NotBlank
     @Lob //porque o texto pode ser muito grande, assim o bd vai aceitar e melhorar a performance
     private String texto;
 }
