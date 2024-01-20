@@ -50,6 +50,7 @@ public class CodeblogController {
     @RequestMapping(value = "/newpost", method=RequestMethod.POST)
     public String savePost(@Valid Post post, BindingResult result, RedirectAttributes attributes){ //@Valid vem do javax. faz validação das constraints colocadas na criação dos campos da tabela no Model (@NotBlank, etc)
         if (result.hasErrors()){//se vier título, texto ou autor em branco, vai dar erro
+            attributes.addFlashAttribute("mensagem","Verifique o preenchimento dos campos obrigatórios"); //exibe mensagem de erro de preenchimento do form para o usuário
             return "redirect:/newpost"; //redireciona o usuário para corrigir 
         } 
         //sem erros
